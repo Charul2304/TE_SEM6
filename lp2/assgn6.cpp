@@ -11,15 +11,15 @@ struct Rule {
     string response_key;
 };
 
-// Define the expert system class
-class ExpertSystem {
+// Define the restaurant reservation system class
+class RestaurantReservationSystem {
 private:
     vector<Rule> rules;
     unordered_map<string, string> responses;
 
 public:
     // Constructor
-    ExpertSystem(const vector<Rule>& _rules, const unordered_map<string, string>& _responses) : rules(_rules), responses(_responses) {}
+    RestaurantReservationSystem(const vector<Rule>& _rules, const unordered_map<string, string>& _responses) : rules(_rules), responses(_responses) {}
 
     // Method to respond to user inquiries
     string respond_to_inquiry(const string& inquiry) {
@@ -37,30 +37,30 @@ int main() {
     vector<Rule> rules = {
         {regex("\\b(?:hello|hi)\\b"), "greeting"},
         {regex("\\b(?:goodbye|bye)\\b"), "farewell"},
-        {regex("\\b(?:help|support)\\b"), "help"},
-        {regex("\\b(?:screen|cracked)\\b"), "screen_cracked"},
-        {regex("\\b(?:battery|charge)\\b"), "battery_problem"},
-        {regex("\\b(?:software|update|reset)\\b"), "software_issue"},
-        {regex("\\b(?:water|damage)\\b"), "water_damage"}
+        {regex("\\b(?:reserve|booking)\\b"), "reservation"},
+        {regex("\\b(?:table|seat|availability)\\b"), "availability"},
+        {regex("\\b(?:menu|food|drink)\\b"), "menu"},
+        {regex("\\b(?:location|address)\\b"), "location"},
+        {regex("\\b(?:contact|phone|email)\\b"), "contact_info"}
     };
 
     // Define responses
     unordered_map<string, string> responses = {
-        {"greeting", "Hello! Welcome to our mobile repairing shop. How can I assist you today?"},
-        {"farewell", "Thank you for choosing our mobile repairing services. Have a great day!"},
-        {"help", "Sure, I'm here to help. What issues are you facing with your mobile?"},
-        {"screen_cracked", "A cracked screen is a common issue. We can replace the screen for you. Please bring your mobile to our shop, and our technicians will take care of it."},
-        {"battery_problem", "If you're experiencing battery issues, we can replace your mobile's battery. Bring it to our shop, and we'll ensure it gets fixed."},
-        {"software_issue", "Software issues can often be resolved by resetting your mobile or updating its software. We can assist you with that. Please bring your phone to our shop, and our technicians will help you out."},
-        {"water_damage", "Water damage can be critical for mobiles. We suggest immediately turning off your device and bringing it to our shop for professional repair. Do not attempt to power it on."},
-        {"default", "I apologize, but I couldn't understand your request."}
+        {"reservation", "Certainly! Would you like to make a reservation?"},
+        {"availability", "Sure, let me check the availability for you."},
+        {"menu", "Here's the link to our menu: [Menu Link]."},
+        {"location", "We are located at [Address]."},
+        {"contact_info", "You can contact us at [Phone Number] or email us at [Email Address]."},
+        {"default", "I'm sorry, I didn't catch that. Could you please repeat?"},
+        {"greeting", "Hello! Welcome to our restaurant. How can I assist you today?"},
+        {"farewell", "Thank you for choosing our services. Have a great day!"}
     };
 
-    // Create an instance of ExpertSystem
-    ExpertSystem chatbot(rules, responses);
+    // Create an instance of RestaurantReservationSystem
+    RestaurantReservationSystem chatbot(rules, responses);
 
     // Main loop to simulate customer interaction
-    cout << "Welcome to the Customer Interaction Chatbot!" << endl;
+    cout << "Welcome to the Restaurant Reservation Chatbot!" << endl;
     cout << "Type 'exit' to end the conversation." << endl;
 
     while (true) {
@@ -76,7 +76,7 @@ int main() {
         cout << "Chatbot: " << bot_response << endl;
     }
 
-    cout << "Thank you for using the Customer Interaction Chatbot. Goodbye!" << endl;
+    cout << "Thank you for using the Restaurant Reservation Chatbot. Goodbye!" << endl;
 
     return 0;
 }
