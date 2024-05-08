@@ -21,7 +21,7 @@ public:
         adjlist[j].push_back(i);
     }
 
-/*****util functions*/
+    /*****util functions*/
     void input()
     {
         cout << "Enter a number of vertices :- ";
@@ -47,7 +47,7 @@ public:
         }
     }
 
-  string getCityName(int val)
+    string getCityName(int val)
     {
         for (auto i : city_map)
         {
@@ -58,8 +58,8 @@ public:
         }
         return "";
     }
-/*********************Recursive DFS*********************************************/
-  void bfs_recursive(string cityname)
+    /*********************Recursive DFS*********************************************/
+    void bfs_recursive(string cityname)
     {
         int st = city_map[cityname];
         vector<int> vis(vertices, 0);
@@ -84,7 +84,6 @@ public:
         cout << (bfs.size());
     }
 
-  
     void solve(vector<int> &vis, vector<vector<string>> &bfs, queue<int> &q, vector<string> &level)
     {
         if (q.empty())
@@ -118,7 +117,7 @@ public:
         solve(vis, bfs, q, level); // Move the recursive call here
     }
 
-/*********************Recursive DFS*********************************************/
+    /*********************Recursive DFS*********************************************/
     void dfs_recursive(string cityname)
     {
         int source = city_map[cityname];
@@ -146,7 +145,6 @@ public:
             }
         }
     }
-
 };
 int main()
 {
@@ -173,7 +171,7 @@ int main()
             string st;
             cout << "Enter a start node :- ";
             cin >> st;
-        
+
             g.bfs_recursive(st);
         }
 
@@ -182,7 +180,7 @@ int main()
             string st;
             cout << "Enter a start node :- ";
             cin >> st;
-           
+
             g.dfs_recursive(st);
         }
 

@@ -1,0 +1,18 @@
+public class CalElecBill {
+    public static void solve(Integer units){
+        Decimal totalbill=0;
+        if(units<=50){
+            totalbill=units*0.25;
+        }
+        else if(units<=150){
+            totalbill=(units-50)*0.5;
+        }
+        else if(units<=250){
+            totalbill=(units-100)*0.75;
+        }
+        else if(units>=250){
+            totalbill=(units-150)*1.5;
+        }
+        System.debug(totalbill);
+    }
+}

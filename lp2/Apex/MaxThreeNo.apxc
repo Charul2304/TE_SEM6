@@ -1,0 +1,15 @@
+public class MaxThreeNo {
+    public static void solve(Integer a,Integer b,Integer c){
+        Integer ans=0;
+        if(a>b && a>c){
+            ans=a;
+        }
+        else if(b>a && b>c){
+            ans=b;
+        }
+        else{
+            ans=c;
+        }
+        System.debug(ans);
+    }
+}

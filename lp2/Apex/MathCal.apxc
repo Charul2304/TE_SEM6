@@ -1,0 +1,19 @@
+public class MathCal {
+    public void add(Integer a,Integer b){
+        System.debug(a+b); 
+    }
+    public void sub(Integer a,Integer b){
+        System.debug(a-b); 
+    }
+    public void mul(Integer a,Integer b){
+        System.debug(a*b); 
+    }
+    public void div(Integer a,Integer b){
+        System.debug(a/b); 
+    }
+    public void modulo(Integer a,Integer b){
+        System.debug(Math.mod(a,b));
+	}
+    public void power(Integer a,Integer b){
+        System.debug(Math.pow(a,b));
+    }

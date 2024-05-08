@@ -1,0 +1,14 @@
+public class CurrCon {
+    public Decimal UsdRupee(Decimal a){
+        return a*83.38;
+	}
+    public Decimal RupeeUsd(Decimal a){
+        return a/83.38;
+	}
+    public Decimal RupeeYen(Decimal a){
+        return a/1.84;
+    }
+    public Decimal YenRupee(Decimal a){
+        return a*1.84;
+	}
+}
